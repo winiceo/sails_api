@@ -8,6 +8,7 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.http.html
  */
+var express = require('express');
 
 module.exports.http = {
 
@@ -20,8 +21,13 @@ module.exports.http = {
   * `customMiddleware` config option.                                         *
   *                                                                           *
   ****************************************************************************/
+  customMiddleware: function (app,next) {
 
-  // middleware: {
+
+      app.use('/doc', express.static(process.cwd() + '/assets/doc/'));
+      
+  },
+   middleware: {
 
   /***************************************************************************
   *                                                                          *
@@ -30,23 +36,21 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    session: null,
+
+     order: [
+       'startRequestTimer',
+       'bodyParser',
+       'handleBodyParserError',
+       'compress',
+         'customMiddleware',
+       'methodOverride',
+       '$custom',
+       'router',
+       '404',
+       '500'
+     ],
+
 
   /****************************************************************************
   *                                                                           *
@@ -69,9 +73,9 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // bodyParser: require('skipper')
+     //bodyParser: require('skipper')
 
-  // },
+  }
 
   /***************************************************************************
   *                                                                          *
@@ -83,5 +87,5 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-  // cache: 31557600000
+  //cache: 31557600000
 };

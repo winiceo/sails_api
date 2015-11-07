@@ -10,7 +10,10 @@
  */
 
 module.exports.bootstrap = function(cb) {
-
+    //require('sails-apidocs')({
+    //    template: process.cwd() + '/node_modules/sails-apidocs/views/template.jade',
+    //    targetDir: process.cwd() + '/assets/docs/api'
+    //});
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

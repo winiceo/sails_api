@@ -57,7 +57,8 @@ module.exports.blueprints = {
   * For example, a BoatController with `rest` enabled generates the          *
   * following routes:                                                        *
   * :::::::::::::::::::::::::::::::::::::::::::::::::::::::                  *
-  *  GET /boat/:id? -> BoatController.find                                   *
+  *  GET /boat -> BoatController.find                                        *
+  *  GET /boat/:id -> BoatController.findOne                                 *
   *  POST /boat -> BoatController.create                                     *
   *  PUT /boat/:id -> BoatController.update                                  *
   *  DELETE /boat/:id -> BoatController.destroy                              *
@@ -68,7 +69,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // rest: true,
+  rest: true,
 
   /***************************************************************************
   *                                                                          *
@@ -82,7 +83,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // shortcuts: true,
+  shortcuts: true,
 
   /***************************************************************************
   *                                                                          *
@@ -96,7 +97,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // prefix: '',
+  prefix: '/v1',
 
   /***************************************************************************
   *                                                                          *
@@ -114,7 +115,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // pluralize: false,
+  pluralize: false,
 
   /***************************************************************************
   *                                                                          *
@@ -126,7 +127,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // populate: true,
+  populate: true,
 
   /****************************************************************************
   *                                                                           *
@@ -135,7 +136,7 @@ module.exports.blueprints = {
   *                                                                           *
   ****************************************************************************/
 
-  // autoWatch: true,
+  autoWatch: false,
 
   /****************************************************************************
   *                                                                           *
@@ -145,6 +146,9 @@ module.exports.blueprints = {
   *                                                                           *
   ****************************************************************************/
 
-  // defaultLimit: 30
+  defaultLimit: 10
 
 };
+
+
+
