@@ -8,7 +8,12 @@
  * For more information on bootstrapping your app, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.bootstrap.html
  */
-
+var browserify = require('browserify-middleware');
+var path=require("path")
+//express = require('express'),
+//app = express(),
+pubDir = path.join(process.cwd(), 'assets', 'client'),
+console.log(pubDir)
 module.exports.bootstrap = function(cb) {
     //require('sails-apidocs')({
     //    template: process.cwd() + '/node_modules/sails-apidocs/views/template.jade',
@@ -16,5 +21,6 @@ module.exports.bootstrap = function(cb) {
     //});
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
+
   cb();
 };

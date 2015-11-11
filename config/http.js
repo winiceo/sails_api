@@ -9,6 +9,7 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.http.html
  */
 var express = require('express');
+ 
 
 module.exports.http = {
 
@@ -23,9 +24,11 @@ module.exports.http = {
   ****************************************************************************/
   customMiddleware: function (app,next) {
 
+      app.use('/', express.static(process.cwd() + '/assets/'));
 
-      app.use('/doc', express.static(process.cwd() + '/assets/doc/'));
+      //app.use('/doc', express.static(process.cwd() + '/assets/doc/'));
       
+
   },
    middleware: {
 

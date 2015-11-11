@@ -21,7 +21,7 @@ var AUDIENCE = "nozus.com";
  * @private
  */
 var LOCAL_STRATEGY_CONFIG = {
-    usernameField: 'email',
+    usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: false
 };
@@ -59,14 +59,14 @@ var SOCIAL_STRATEGY_CONFIG = {
  * @param {Function} next Callback
  * @private
  */
-function _onLocalStrategyAuth(email, password, next) {
-    User.findOne({email: email})
+function _onLocalStrategyAuth(username, password, next) {
+    User.findOne({username: username})
         .exec(function (error, user) {
             if (error) return next(error, false, {});
 
             if (!user) return next(null, false, {
                 code: 'E_USER_NOT_FOUND',
-                message: email + ' is not found'
+                message: username + ' is not found'
             });
 
             // TODO: replace with new cipher service type

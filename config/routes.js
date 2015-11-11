@@ -19,7 +19,7 @@
  * For more information on configuring custom routes, check out:
  * http://sailsjs.org/#/documentation/concepts/Routes/RouteTargetSyntax.html
  */
-
+ 
 module.exports.routes = {
 
     /***************************************************************************
@@ -32,14 +32,11 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-    '/': {
-        view: 'homepage'
-    },
+    
     //'GET /article/d/9': { blueprint: 'delete'},
     'GET /v1/:controller/delete/:id': 'HelperController.delete',
     'POST /v1/:controller/delete': 'HelperController.delete'
-
-    /***************************************************************************
+     /***************************************************************************
      *                                                                          *
      * Custom routes here...                                                    *
      *                                                                          *

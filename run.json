@@ -1,0 +1,14 @@
+{
+  "apps" : [{
+    // Application #1
+    "name"        : "sails-api",
+    "script"      : "app.js",
+   
+    "watch"       : true,
+    "node_args"   : "--harmony",
+    "merge_logs"  : true,
+    "ignore_watch" : ["assets",".tmp","assets/app.js",],
+   }
+  
+  ]
+}
